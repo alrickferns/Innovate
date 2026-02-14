@@ -10,24 +10,25 @@ Whenever the user requests ANY change to the Innovation Hub Executive Tracker (U
 
 1. Stage all changes:
 ```
-git add -A
+$env:PATH = "$env:LOCALAPPDATA\Programs\Git\cmd;$env:PATH"; git add -A
 ```
 
 2. Commit with a descriptive message summarizing the change:
 ```
-git commit -m "<brief description of what changed>"
+$env:PATH = "$env:LOCALAPPDATA\Programs\Git\cmd;$env:PATH"; git commit -m "<brief description of what changed>"
 ```
 
 3. Push to the main branch (which GitHub Pages serves from):
 ```
-git push origin main
+$env:PATH = "$env:LOCALAPPDATA\Programs\Git\cmd;$env:PATH"; git push origin main
 ```
 
 4. Confirm to the user that the changes have been pushed and the GitHub Pages site will update in ~1 minute.
 
 ## Important Notes
 - The project lives at: `C:\Users\fernande-11\.gemini\antigravity\scratch\innovation-hub-tracker`
+- Remote repo: `https://github.com/alrickferns/Innovate.git`
 - GitHub Pages serves from the `main` branch root (no build step needed)
 - All files are static HTML/CSS/JS — no compilation required
-- If git is not initialized yet, run `git init` and `git remote add origin <repo-url>` first
+- Git is at `$env:LOCALAPPDATA\Programs\Git\cmd` — always prepend this to PATH
 - Always use `git add -A` to capture all changes including new files and deletions
